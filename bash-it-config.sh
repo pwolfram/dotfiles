@@ -1,16 +1,23 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-bash-it disable plugin javascript
-bash-it disable plugin jekyll
-#bash-it disable plugin latex
-bash-it disable plugin nginx
-#bash-it disable plugin osx
-bash-it disable plugin ruby
-bash-it disable plugin _xterm
-bash-it disable plugin z
+source ~/.bash_profile
 
-bash-it disable alias emacs
-bash-it disable alias jitsu
-bash-it disable alias osx
-bash-it disable alias rails
-bash-it disable alias textmate
+bash-it enable alias git
+bash-it enable alias svn
+bash-it enable alias tmux
+bash-it enable alias vim
+
+bash-it enable completion git
+bash-it enable completion conda
+bash-it enable completion pip3
+bash-it enable completion ssh
+bash-it enable completion tmux
+bash-it enable completion system
+
+bash-it enable plugin browser
+bash-it enable plugin edit-mode-vi
+bash-it enable plugin fasd
+bash-it enable plugin jekyll
+bash-it enable plugin less-pretty-cat
+bash-it enable plugin ssh
+bash-it enable plugin

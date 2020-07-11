@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 BASH_IT_ADDR="git@github.com:pwolfram/bash-it.git"
 VUNDLE_ADDR="git@github.com:gmarik/vundle.git"
 
@@ -65,7 +65,7 @@ fi
 if [ -f ~/.git_template ]; then
   mkdir -p ~/.git_template
   mv git/hooks ~/.git_template/hooks
-fi 
+fi
 
 git clone ${VUNDLE_ADDR} ~/.vim/bundle/Vundle.vim
 git clone ${BASH_IT_ADDR} ~/.bash_it
@@ -83,6 +83,9 @@ do
 	ln -sf ${PWD}/bash-it-custom/${FILE} ~/.bash_it/custom/.
 done
 
+source ~/.bashrc
+./bash-it-config.sh
+
 ln -s ${PWD}/vim/.vimrc ~/.vimrc
 if [ ! -d ~/.vim/bundle/Vundle.vim/spell ]; then
   mkdir ~/.vim/bundle/Vundle.vim/spell
@@ -96,9 +99,10 @@ ln -sf ${PWD}/vim/.vimrc.bundles ~/.vimrc.bundles
 ln -sf ${PWD}/tmux/.tmux.conf ~/.tmux.conf
 ln -sf ${PWD}/screen/.screenrc ~/.screenrc
 
-if [ ! -d ~/.vim/after/syntax/ ]; then 
+if [ ! -d ~/.vim/after/syntax/ ]; then
   mkdir -p ~/.vim/after/syntax/
 fi
+
 ln -sf ${PWD}/vim/tex.vim ~/.vim/after/syntax/tex.vim
 
 ln -sf ${PWD}/git/.gitconfig ~/.
@@ -124,7 +128,7 @@ ln -sf ${PWD}/vim/scripts.vim ~/.vim/scripts.vim
 
 ###### MAC OSX Specifics ####################
 # install osx-trash if on macosx
-if [ `uname` == 'Darwin' ]; then 
+if [ `uname` == 'Darwin' ]; then
   # http://superuser.com/questions/694433/install-gem-for-older-ruby-1-8-on-mac-os-x-10-9-maverics
   sudo gem install osx-trash
   brew install ack

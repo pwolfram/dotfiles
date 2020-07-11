@@ -4,7 +4,7 @@
 ATWORK_DOMAIN='.lanl.gov'
 WORKIP="no"
 
-alias ifconfig='/sbin/ifconfig'
+#alias ifconfig='/sbin/ifconfig'
 
 OS=`uname`
 IO="" # store IP

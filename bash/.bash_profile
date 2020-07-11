@@ -173,6 +173,5 @@ if [[ $(grep Microsoft /proc/version) ]]; then
   export DISPLAY=:0
 fi
 
-export PATH="/Users/pwolfram/miniconda2/bin:$PATH"
 PATH=$(for d in ${PATH//:/ }; do [ -x $d ] && printf "$d\n"; done | uniq | tr '\12' ':')
 PATH=${PATH%?}
