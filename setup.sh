@@ -90,24 +90,24 @@ fi
 if [ ! -d ~/.vim/undodir ]; then
   mkdir ~/.vim/undodir
 fi
-ln -s ${PWD}/vim/.vimspell.en.utf-8.add ~/.vim/bundle/Vundle.vim/spell/en.utf-8.add
-ln -s ${PWD}/vim/.gvimrc ~/.gvimrc
-ln -s ${PWD}/vim/.vimrc.bundles ~/.vimrc.bundles
-ln -s ${PWD}/tmux/.tmux.conf ~/.tmux.conf
-ln -s ${PWD}/screen/.screenrc ~/.screenrc
+ln -sf ${PWD}/vim/.vimspell.en.utf-8.add ~/.vim/bundle/Vundle.vim/spell/en.utf-8.add
+ln -sf ${PWD}/vim/.gvimrc ~/.gvimrc
+ln -sf ${PWD}/vim/.vimrc.bundles ~/.vimrc.bundles
+ln -sf ${PWD}/tmux/.tmux.conf ~/.tmux.conf
+ln -sf ${PWD}/screen/.screenrc ~/.screenrc
 
 if [ ! -d ~/.vim/after/syntax/ ]; then 
   mkdir -p ~/.vim/after/syntax/
 fi
 ln -sf ${PWD}/vim/tex.vim ~/.vim/after/syntax/tex.vim
 
-ln -s ${PWD}/git/.gitconfig ~/.
-ln -s ${PWD}/git/.git-completion.bash ~/.
-ln -s ${PWD}/git/core_excludes ~/.git_core_excludes
+ln -sf ${PWD}/git/.gitconfig ~/.
+ln -sf ${PWD}/git/.git-completion.bash ~/.
+ln -sf ${PWD}/git/core_excludes ~/.git_core_excludes
 
-ln -s ${PWD}/pdb/.pdbrc ~/.pdbrc
+ln -sf ${PWD}/pdb/.pdbrc ~/.pdbrc
 
-ln -s ${PWD}/Xterm/.Xdefaults ~/.Xdefaults
+ln -sf ${PWD}/Xterm/.Xdefaults ~/.Xdefaults
 # merge results into default xterm settings
 xrdb -merge Xterm/.Xdefaults
 xrdb -merge Xterm/solarized
@@ -120,7 +120,7 @@ cp -R scripts/* ~/scripts/.
 
 vim -u ~/.vimrc.bundles +BundleInstall +q
 
-ln -s ${PWD}/vim/scripts.vim ~/.vim/scripts.vim
+ln -sf ${PWD}/vim/scripts.vim ~/.vim/scripts.vim
 
 ###### MAC OSX Specifics ####################
 # install osx-trash if on macosx
